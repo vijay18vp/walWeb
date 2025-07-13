@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallpaper Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wal.css">
+</head>
+<body>
+
+  <!-- Settings Blur Overlay -->
+  <div class="settings-overlay" id="settingsOverlay"></div>
+
+  <!-- Floating Settings Menu -->
+  <div class="settings-menu" id="settingsMenu">
+    <ul>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+
+  <!-- Dark Mode Toggle -->
+<div class="dark-toggle" onclick="toggleDarkMode()">
+  <img src="projectAsset/night-mode.png" alt="Dark Mode" title="Toggle Dark Mode">
+</div>
+
+  <!-- Main Logo -->
+  <div class="name">
+    <h1>Znozx</h1>
+  </div>
+
+  <!-- Top Right Dashboard Icons -->
+  <div class="dashboard">
+    <img src="projectAsset/lead.png" alt="leaderboard" title="Leaderboard">
+    <img src="projectAsset/not.png" alt="notification" title="Notification">
+    <img src="projectAsset/user.png" alt="user" title="User Profile">
+  </div>
+
+  <!-- Left Settings Icon -->
+  <div class="setting" onclick="toggleSettings()">
+    <img src="projectAsset/setting.png" alt="settings" title="Settings">
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" placeholder="Search wallpapers..." />
+    <button type="button">Search</button>
+  </div>
+
+  <!-- Wallpaper Grid -->
+  <section class="wallpaper-container">
+    <div class="wallpaper"><img src="assets/mini.jpg" alt="Mini"></div>
+    <div class="wallpaper"><img src="assets/tress.jpg" alt="Tree"></div>
+    <div class="wallpaper"><img src="assets/com.jpg" alt="Computer"></div>
+    <div class="wallpaper"><img src="assets/hill.jpg" alt="Hill"></div>
+    <div class="wallpaper"><img src="assets/learn.webp" alt="Quote"></div>
+
+    <div class="wallpaper-end"><p>Wallpapers soon</p></div>
+  </section>
+
+  <!-- Image Modal -->
+  <div class="modal" id="imageModal">
+    <span class="close-modal" onclick="closeModal()">×</span>
+    <img id="modalImg" src="" alt="Preview">
+    <a id="downloadBtn" href="#" download class="download-button">Download</a>
+  </div>
+
+  <script src="wal.js"></script>
+</body>
+</html>

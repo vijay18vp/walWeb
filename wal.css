@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.name {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Kaushan Script', cursive;
+  font-size: 40px;
+ color: #A68B61; 
+ color: #E04F67; 
+ background-image: linear-gradient(45deg, #E04F67 , #C72C4A , #7B1E6A , #4A1442 ); 
+ background-clip: text; 
+ -webkit-background-clip: text; 
+ -webkit-text-fill-color: transparent; 
+  animation: gradientMove 6s infinite alternate;
+  z-index: 999;
+}
+
+@keyframes gradientMove {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+.dashboard {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  gap: 18px;
+  z-index: 1001;
+}
+
+.dashboard img,
+.setting img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.setting {
+  position: fixed;
+  top: 15px;
+  left: 30px;
+  z-index: 1001;
+}
+
+/* Search */
+.search-container {
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  background: #fff;
+  border-radius: 40px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 998;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
+  width: 400px;
+  border-radius: 40px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(90deg, #d53369, #daae51);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Settings */
+.settings-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0,0,0,0.2);
+  z-index: 998;
+}
+
+.settings-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 30px;
+  background: #dee2e6;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.settings-menu ul {
+  list-style: none;
+}
+
+.settings-menu li {
+  margin: 10px 0;
+}
+
+.settings-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.settings-menu a:hover {
+  color: #d53369;
+}
+
+/* Wallpapers */
+.wallpaper-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  margin-top: 300px;
+}
+
+.wallpaper {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.wallpaper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.wallpaper:hover img {
+  transform: scale(1.05);
+}
+
+.wallpaper-end {
+  grid-column: span 4;
+  text-align: center;
+  font-weight: 600;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.download-button {
+  margin-top: 20px;
+  background: #fff;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+}
+
+.download-button:hover {
+  background: #d53369;
+  color: #fff;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Dark mode toggle icon */
+.dark-toggle {
+  position: fixed;
+  top: 15px;
+  left: 80px;
+  z-index: 1001;
+}
+
+.dark-toggle img {
+  width: 30px;
+  cursor: pointer;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .search-container {
+  background-color: #2a2a2a;
+  border: 1.5px solid #444;
+}
+
+body.dark-mode .settings-menu {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .settings-menu a {
+  color: #ccc;
+}
+
+body.dark-mode .settings-menu a:hover {
+  color: #fff;
+}
+
+body.dark-mode .wallpaper {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .download-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+body.dark-mode .download-button:hover {
+  background: #fff;
+  color: #333;
+}
